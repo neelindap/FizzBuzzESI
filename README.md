@@ -1,6 +1,17 @@
 # FizzBuzzESI
 Assignment:  Write a program that prints the numbers from 1 to 100.  For numbers containing the digit '3' print "Fizz" instead of the number.  For numbers containing the digit '5' print "Buzz". For numbers containing both digit ‘3’ and digit ‘5’ print “FizzBuzz” or “BuzzFizz” depending on order.
 
+## Solution approach:
+- Since the problem statement mentioned we should print a word for numbers which contained the digit 3 and/or 5, my approach was to extract individual digits from the number
+- Once the digit is extracted, I wrote a switch statement to check if it is 3 or 5 and append either Fizz or Buzz at the starting position of an empty string builder object
+- A special condition for numbers 33 and 55 is to check if the word already contains the word Fizz or Buzz, respectively and not append it again (Assumption: for repeated digits, print the word only once)
+- The reason for insertion at the start position of String Builder is to maintain the order of the word -> FizzBuzz for 35 and BuzzFizz for 53
+- This string is then returned to the calling function, which checks if the word is empty. If so, it implies the number contains neither digit 3 or 5, and it updates the word to a string value of the current number
+- The function then prints the number along with its corresponding word
+- The function to print the string is called from the main class which runs a for loop from 1 to 100
+- I've included a Thread.sleep() of 100 milliseconds to print the output one number at a time
+
+------
 
 Running code on repl.it : https://repl.it/@Neel_Vijaykumar/FizzBuzz
 
